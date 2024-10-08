@@ -1,0 +1,7 @@
+&soc {
+	qusb_phy0: qusb@88e2000 {
+		qcom,qusb-phy-init-seq =
+			    0x77 0x240 /* TUNE1 */
+			    0x7c 0x244 /* TUNE2 */
+	};
+};

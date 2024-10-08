@@ -1,0 +1,34 @@
+&bolero {
+	qcom,num-macros = <3>;
+	wcd937x_codec: wcd937x-codec {
+		qcom,cdc-micbias1-mv = <2700>;
+		qcom,cdc-micbias2-mv = <2700>;
+		qcom,cdc-micbias3-mv = <2700>;
+	};
+	/delete-node/ wsa_macro: wsa-macro@62f00000;
+};
+
+&sm6150_snd {
+	qcom,audio-routing =
+		"AMIC1", "MIC BIAS1",
+		"MIC BIAS1", "Analog Mic1",
+		"AMIC3", "MIC BIAS3",
+		"MIC BIAS3", "Analog Mic3",
+	qcom,wsa-max-devs = <0>;
+	qcom,tert-mi2s-gpios = <&cdc_ter_mi2s_gpios>;
+	/disable-property/ qcom,ext-disp-audio-rx;
+	/disable-property/ qcom,wsa-devs;
+};
+
+&soc {
+	cdc_ter_mi2s_gpios: msm_cdc_pinctrl_ter {
+		compatible = "qcom,msm-cdc-pinctrl";
+		pinctrl-names = "aud_active", "aud_sleep";
+		pinctrl-0 = <&ter_mi2s_sck_active &ter_mi2s_ws_active
+			    &ter_mi2s_sd0_active &ter_mi2s_sd1_active>;
+		pinctrl-1 = <&ter_mi2s_sck_sleep &ter_mi2s_ws_sleep
+			    &ter_mi2s_sd0_sleep &ter_mi2s_sd1_sleep>;
+	};
+	/delete-node/ wsa_swr_gpios: wsa_swr_clk_data_pinctrl;
+	/delete-node/ wsa_spkr_en1: wsa_spkr_en1_pinctrl;
+};

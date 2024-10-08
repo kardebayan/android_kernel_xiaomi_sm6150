@@ -1,0 +1,12 @@
+&soc {
+    /disable-node/ qupv3_se7_i2c: i2c@0xa84000;
+    /disable-node/ qupv3_se8_i2c: i2c@0xa88000;
+    /disable-node/ qupv3_se9_i2c: i2c@0xa8c000;
+    /disable-node/ qupv3_se10_i2c: i2c@0xa90000;
+    /disable-node/ qupv3_se11_i2c: i2c@0xa94000;
+    /disable-node/ qupv3_se10_4uart: qcom,qup_uart@0xa90000;
+    /disable-node/ qupv3_se11_4uart: qcom,qup_uart@0xa94000;
+    /disable-node/ qupv3_se6_spi: spi@0xa80000;
+    /disable-node/ qupv3_se7_spi: spi@0xa84000;
+    /disable-node/ qupv3_se8_spi: spi@0xa88000;    
+};

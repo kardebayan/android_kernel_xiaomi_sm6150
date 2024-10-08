@@ -1,0 +1,4 @@
+&qupv3_se7_i2c {
+    /delete-node/ st_fts@49;
+    /delete-property/ status;
+};

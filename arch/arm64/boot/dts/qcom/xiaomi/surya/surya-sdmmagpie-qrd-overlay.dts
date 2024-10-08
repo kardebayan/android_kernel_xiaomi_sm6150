@@ -1,0 +1,4 @@
+&sm6150_snd {
+	qcom,wsa-max-devs = <0>;
+	/disable-property/ qcom,wsa-devs;
+};

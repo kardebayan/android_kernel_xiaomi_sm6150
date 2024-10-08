@@ -1,0 +1,12 @@
+&soc {
+	mtp_batterydata: qcom,battery-data {
+		#include "batterydata-M703-PM7150B-ATL-5160mah.dtsi"
+		#include "batterydata-M703-ATL-6000mah.dtsi"
+	};
+};
+
+&qupv3_se7_i2c{
+	/disable-property/ qcom,i2c-touch-active;
+	/disable-property/ status;
+	/disable-node/ st_fts@49;
+};

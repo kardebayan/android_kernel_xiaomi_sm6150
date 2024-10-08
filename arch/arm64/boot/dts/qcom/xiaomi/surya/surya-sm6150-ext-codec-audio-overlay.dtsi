@@ -1,0 +1,11 @@
+&wsa_swr_gpios {
+    /delete-property/ status;
+};
+
+&wsa_spkr_en1 {
+    /delete-property/ status;
+};
+
+&wsa_spkr_en2 {
+    /delete-property/ status;
+};
